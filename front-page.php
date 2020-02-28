@@ -9,7 +9,7 @@ get_header();
 if ( get_option( 'show_on_front' ) == 'page' ) {
 	$astral_frontpage_show = get_theme_mod( 'astral_frontpage_show' );
 	if ( $astral_frontpage_show ) {
-		get_template_part( 'content', 'frontpage' );
+		get_template_part( 'template-parts/content', 'page' );
 	} else {
 		get_template_part( 'index' );
 	}
