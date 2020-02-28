@@ -59,6 +59,25 @@ while ( $query1->have_posts() ) {
     echo '<h2>' . get_the_title() . '</h2>';
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
 };
+
+$args2=array(
+    "category_name" =>"evenement",
+    "posts_per_page"=> 10
+);
+
+ 
+ 
+//  The 2nd Query (without global var) 
+$query2 = new WP_Query( $args2 );
+ 
+// The 2nd Loop
+while ( $query2->have_posts() ) {
+    $query2->the_post();
+    the_post_thumbnail("thumbnail");
+    echo '<h2>' . get_the_title( $query2->post->ID ) . '</h2>';
+    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+
+}
  
 /* Restore original Post Data 
  * NB: Because we are using new WP_Query we aren't stomping on the 
