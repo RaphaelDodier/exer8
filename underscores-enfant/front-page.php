@@ -61,7 +61,7 @@ while ( $query1->have_posts() ) {
 wp_reset_postdata();
 
 
-
+/////////////////////////////////////////////// NOUVELLE ///////////////////////////////////////////////////
 
 $args2=array(
     "category_name" =>"evenement",
